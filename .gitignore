@@ -43,3 +43,6 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+.idea/
+composer.phar
+vendor/
