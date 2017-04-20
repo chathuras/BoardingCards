@@ -6,7 +6,7 @@ namespace TripSorter;
  * Class Transporter
  * @package TripSorter
  */
-abstract class Transporter implements Transportable
+abstract class AbstractTransporter implements Transportable
 {
 
     public $type;

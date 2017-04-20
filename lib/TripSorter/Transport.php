@@ -6,7 +6,7 @@ namespace TripSorter;
  * Class Transport
  * @package TripSorter
  */
-class Transport extends Transporter
+class Transport extends AbstractTransporter
 {
     /**
      * Transport constructor.
