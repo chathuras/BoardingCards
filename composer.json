@@ -1,0 +1,18 @@
+{
+  "name": "chathuras/trip-sorter",
+  "description": "Trip Sorter - propertyfinder.ae interview task",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chathura Sandeepa",
+      "email": "chathuras@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "TripSorter\\": "lib/TripSorter/"
+    }
+  }
+}
