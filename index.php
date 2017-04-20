@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
+include 'card-set.php';
 
 use TripSorter\CardFactory;
 

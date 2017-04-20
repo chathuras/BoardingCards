@@ -8,19 +8,20 @@ namespace TripSorter;
  */
 class Card
 {
-    const TYPE_BUS = 'bus';
-    const TYPE_FLIGHT = 'flight';
-    const TYPE_TRAIN = 'train';
-
-
-    private $type;
+    private $transporter;
 
     /**
      * Card constructor.
      */
-    public function __construct($type)
+    public function __construct()
     {
-        $this->type = $type;
     }
 
+    /**
+     * @param \TripSorter\Transportable $transporter
+     */
+    public function setTransporter(Transportable $transporter)
+    {
+        $this->transporter = $transporter;
+    }
 }

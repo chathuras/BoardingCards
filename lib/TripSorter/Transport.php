@@ -6,7 +6,13 @@ namespace TripSorter;
  * Class Transport
  * @package TripSorter
  */
-abstract class Transport implements Transportable
+class Transport extends Transporter
 {
-    protected $seat;
+    /**
+     * Transport constructor.
+     */
+    public function __construct()
+    {
+        $this->type = Transportable::TYPE_GENERIC;
+    }
 }
