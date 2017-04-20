@@ -1,13 +1,16 @@
 <?php
 
-namespace TripSorter;
+namespace TripSorter\Train;
+
+use TripSorter\AbstractTransporter;
+use TripSorter\Transportable;
 
 
 /**
  * Class Train
  * @package TripSorter
  */
-class Train extends Transporter
+class Train extends AbstractTransporter implements Locomotable
 {
     private $number;
 
@@ -18,6 +21,6 @@ class Train extends Transporter
 
     public function setNumber(Number $number)
     {
-
+        $this->number = $number;
     }
 }

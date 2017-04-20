@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chathura
- * Date: 20/4/17
- * Time: 2:35 PM
- */
 
-namespace TripSorter;
+namespace TripSorter\Train;
 
+use TripSorter\AbstractNumber;
 
-class TrainNumber extends Number
+class Number extends AbstractNumber
 {
 
 }

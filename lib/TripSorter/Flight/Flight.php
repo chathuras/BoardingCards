@@ -1,32 +1,34 @@
 <?php
 
-namespace TripSorter;
+namespace TripSorter\Flight;
 
 
-class Flight extends Transporter
+use TripSorter\AbstractTransporter;
+
+class Flight extends AbstractTransporter implements Flyable
 {
 
     private $gate;
-    private $baggage;
+    private $baggageCounter;
     private $number;
 
     public function __construct()
     {
-        $this->type = Transportable::TYPE_FLIGHT;
+        $this->type = AbstractTransporter::TYPE_FLIGHT;
     }
 
     public function setNumber(Number $number)
     {
-
+        $this->number = $number;
     }
 
-    public function setGate(Gate $number)
+    public function setGate(Gate $gate)
     {
-
+        $this->gate = $gate;
     }
 
-    public function setBaggageCounter(BaggageCounter $number)
+    public function setBaggageCounter(BaggageCounter $baggageCounter)
     {
-
+        $this->baggageCounter = $baggageCounter;
     }
 }

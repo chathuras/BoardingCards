@@ -6,10 +6,11 @@
  * Time: 2:35 PM
  */
 
-namespace TripSorter;
+namespace TripSorter\Flight;
 
+use TripSorter\AbstractNumber;
 
-class FlightNumber extends Number
+class Number extends AbstractNumber
 {
 
 }
