@@ -2,8 +2,20 @@
 
 namespace TripSorter;
 
-
+/**
+ * Class AbstractNumber
+ * @package TripSorter
+ */
 abstract class AbstractNumber
 {
+    protected $number;
 
+    /**
+     * AbstractNumber constructor.
+     * @param $number
+     */
+    final public function __construct($number)
+    {
+        $this->number = $number;
+    }
 }

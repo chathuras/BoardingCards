@@ -8,7 +8,6 @@ namespace TripSorter;
  */
 class Bus extends AbstractTransporter
 {
-
     /**
      * Bus constructor.
      */

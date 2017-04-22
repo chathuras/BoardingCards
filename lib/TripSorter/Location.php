@@ -8,7 +8,7 @@ namespace TripSorter;
  */
 class Location
 {
-    private $name;
+    public $name;
 
     /**
      * Location constructor.
@@ -16,6 +16,6 @@ class Location
      */
     public function __construct($name)
     {
-
+        $this->name = $name;
     }
 }

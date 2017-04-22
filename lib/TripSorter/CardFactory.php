@@ -2,7 +2,11 @@
 
 namespace TripSorter;
 
+use TripSorter\Flight\BaggageCounter;
 use TripSorter\Flight\Flight;
+use TripSorter\Flight\Gate;
+use TripSorter\Flight\Number as FlightNumber;
+use TripSorter\Train\Number as TrainNumber;
 use TripSorter\Train\Train;
 
 /**
@@ -11,6 +15,10 @@ use TripSorter\Train\Train;
  */
 class CardFactory
 {
+    /**
+     * @param array $cardSet
+     * @return \TripSorter\CardStack
+     */
     public function generateCards(array $cardSet)
     {
         $cardStack = new CardStack();
@@ -25,22 +33,22 @@ class CardFactory
                     break;
                 case Transportable::TYPE_FLIGHT:
                     $transporter = new Flight();
-                    $transporter->setNumber($cardData['number']);
-                    $transporter->setGate($cardData['gate']);
-                    $transporter->setBaggageCounter($cardData['baggage_counter']);
+                    $transporter->setNumber(new FlightNumber($cardData['number']));
+                    $transporter->setGate(new Gate($cardData['gate']));
+                    $transporter->setBaggageCounter(new BaggageCounter($cardData['baggage_counter']));
 
                     break;
                 case Transportable::TYPE_TRAIN:
                     $transporter = new Train();
-                    $transporter->setNumber($cardData['number']);
+                    $transporter->setNumber(new TrainNumber($cardData['number']));
                     break;
                 default:
                     $transporter = new Transport();
             }
 
-            $transporter->setFrom($cardData['from']);
-            $transporter->setTo($cardData['to']);
-            $transporter->setSeat($cardData['seat']);
+            $transporter->setFrom(new Location($cardData['from']));
+            $transporter->setTo(new Location($cardData['to']));
+            $transporter->setSeat(new Seat($cardData['seat']));
 
             $card->setTransporter($transporter);
             $cardStack->addCard($card);

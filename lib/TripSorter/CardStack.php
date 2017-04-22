@@ -15,7 +15,8 @@ class CardStack
      * @param \TripSorter\Card $card
      * @return int
      */
-    public function addCard(Card $card) {
+    public function addCard(Card $card)
+    {
         return array_push($this->stack, $card);
     }
 }

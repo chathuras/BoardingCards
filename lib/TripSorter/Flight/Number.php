@@ -1,15 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chathura
- * Date: 20/4/17
- * Time: 2:35 PM
- */
 
 namespace TripSorter\Flight;
 
 use TripSorter\AbstractNumber;
 
+/**
+ * Class Number
+ * @package TripSorter\Flight
+ */
 class Number extends AbstractNumber
 {
 

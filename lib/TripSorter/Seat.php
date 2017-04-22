@@ -1,15 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chathura
- * Date: 20/4/17
- * Time: 2:34 PM
- */
 
 namespace TripSorter;
 
-
+/**
+ * Class Seat
+ * @package TripSorter
+ */
 class Seat
 {
+    public $number;
 
+    /**
+     * Seat constructor.
+     * @param $number
+     */
+    public function __construct($number)
+    {
+        $this->number = $number;
+    }
 }
