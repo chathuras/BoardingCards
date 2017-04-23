@@ -5,7 +5,11 @@ include 'card-set.php';
 
 use TripSorter\CardFactory;
 
-$cardFactory = new CardFactory();
-$cards = $cardFactory->generateCards($cardSet);
+shuffle($cardSet);
 
-var_dump($cards);
+var_dump($cardSet);
+
+$cardStack = CardFactory::generateCardStack($cardSet);
+$cardStack->sortCards();
+
+var_dump($cardStack);

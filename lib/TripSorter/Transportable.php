@@ -13,17 +13,30 @@ interface Transportable
     const TYPE_TRAIN = 'train';
     const TYPE_GENERIC = 'generic';
 
+    /**
+     * Transportable constructor.
+     */
     public function __construct();
 
     /**
-     * @param \TripSorter\Location $location
+     * @return \TripSorter\Location $arrival
      */
-    public function setFrom(Location $location);
+    public function getArrival();
 
     /**
-     * @param \TripSorter\Location $to
+     * @param \TripSorter\Location $arrival
      */
-    public function setTo(Location $to);
+    public function setArrival(Location $arrival);
+
+    /**
+     * @return \TripSorter\Location $destination
+     */
+    public function getDestination();
+
+    /**
+     * @param \TripSorter\Location $destination
+     */
+    public function setDestination(Location $destination);
 
     /**
      * @param \TripSorter\Seat $seat

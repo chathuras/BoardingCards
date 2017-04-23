@@ -8,25 +8,41 @@ namespace TripSorter;
  */
 abstract class AbstractTransporter implements Transportable
 {
-    public $from;
-    public $to;
+    public $arrival;
+    public $destination;
     public $seat;
     protected $type;
 
     /**
-     * @param \TripSorter\Location $from
+     * @return \TripSorter\Location $arrival
      */
-    final public function setFrom(Location $from)
+    final public function getArrival()
     {
-        $this->from = $from;
+        return $this->arrival;
     }
 
     /**
-     * @param \TripSorter\Location $to
+     * @param \TripSorter\Location $arrival
      */
-    final public function setTo(Location $to)
+    final public function setArrival(Location $arrival)
     {
-        $this->to = $to;
+        $this->arrival = $arrival;
+    }
+
+    /**
+     * @return \TripSorter\Location $destination
+     */
+    final public function getDestination()
+    {
+        return $this->destination;
+    }
+
+    /**
+     * @param \TripSorter\Location $destination
+     */
+    final public function setDestination(Location $destination)
+    {
+        $this->destination = $destination;
     }
 
     /**
