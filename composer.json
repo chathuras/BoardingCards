@@ -14,5 +14,13 @@
     "psr-4": {
       "TripSorter\\": "lib/TripSorter/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TripSorter\\Tests": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
   }
 }

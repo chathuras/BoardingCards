@@ -32,7 +32,7 @@ class CardFactory
         return $cardStack;
     }
 
-    private static function createCard(Transportable $transporter)
+    public static function createCard(Transportable $transporter)
     {
         $card = new Card();
         $card->setTransporter($transporter);
@@ -40,7 +40,7 @@ class CardFactory
         return $card;
     }
 
-    private static function createTransporter(array $cardData)
+    public static function createTransporter(array $cardData)
     {
         $type = $cardData['type'];
 
