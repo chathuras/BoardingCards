@@ -8,7 +8,7 @@ namespace TripSorter\Flight;
  */
 class BaggageCounter
 {
-    private $baggageCounter;
+    public $baggageCounter;
 
     /**
      * BaggageCounter constructor.

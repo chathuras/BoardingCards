@@ -32,14 +32,10 @@ class CardFactory
         return $cardStack;
     }
 
-    public static function createCard(Transportable $transporter)
-    {
-        $card = new Card();
-        $card->setTransporter($transporter);
-
-        return $card;
-    }
-
+    /**
+     * @param array $cardData
+     * @return \TripSorter\AbstractTransporter
+     */
     public static function createTransporter(array $cardData)
     {
         $type = $cardData['type'];
@@ -68,5 +64,17 @@ class CardFactory
         $transporter->setSeat(new Seat($cardData['seat']));
 
         return $transporter;
+    }
+
+    /**
+     * @param \TripSorter\Transportable $transporter
+     * @return \TripSorter\Card
+     */
+    public static function createCard(Transportable $transporter)
+    {
+        $card = new Card();
+        $card->setTransporter($transporter);
+
+        return $card;
     }
 }

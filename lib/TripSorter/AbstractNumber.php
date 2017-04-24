@@ -8,7 +8,7 @@ namespace TripSorter;
  */
 abstract class AbstractNumber
 {
-    protected $number;
+    public $number;
 
     /**
      * AbstractNumber constructor.

@@ -42,4 +42,9 @@ interface Transportable
      * @param \TripSorter\Seat $seat
      */
     public function setSeat(Seat $seat);
+
+    /**
+     * @return string
+     */
+    public function getJourneyDescription();
 }

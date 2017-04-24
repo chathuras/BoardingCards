@@ -7,9 +7,8 @@ use TripSorter\CardFactory;
 
 shuffle($cardSet);
 
-var_dump($cardSet);
-
 $cardStack = CardFactory::generateCardStack($cardSet);
-$cardStack->sortCards();
+$cardStack->printJourneyDetails();
 
-var_dump($cardStack);
+$cardStack->sortCards();
+$cardStack->printJourneyDetails();

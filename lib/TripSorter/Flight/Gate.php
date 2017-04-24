@@ -8,7 +8,7 @@ namespace TripSorter\Flight;
  */
 class Gate
 {
-    private $gate;
+    public $gate;
 
     /**
      * Gate constructor.

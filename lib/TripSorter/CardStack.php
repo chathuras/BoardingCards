@@ -8,7 +8,7 @@ namespace TripSorter;
  */
 class CardStack
 {
-    private $stack = [];
+    public $stack = [];
 
     /**
      * @param \TripSorter\Card $card
@@ -21,29 +21,44 @@ class CardStack
 
     public function sortCards()
     {
-        $firstElement = $lastElement = array_shift($this->stack);
+        $unSortedStack = $this->stack;
+
+        $firstElement = $lastElement = $unSortedStack[0];
         $sortedStack[] = $firstElement;
 
-        while (!empty($this->stack)) {
-            foreach ($this->stack as $index => $card) {
+        unset($unSortedStack[0]);
+
+        while (!empty($unSortedStack)) {
+            foreach ($unSortedStack as $index => $card) {
                 if ($card->isArrivalEqualTo($lastElement->getDestination())) {
                     $sortedStack[] = $card;
                     $lastElement = $card;
 
-                    unset($this->stack[$index]);
+                    unset($unSortedStack[$index]);
                     continue;
                 }
 
                 if ($card->isDestinationEqualTo($firstElement->getArrival())) {
-                    $firstElement = $card;
                     array_unshift($sortedStack, $card);
+                    $firstElement = $card;
 
-                    unset($this->stack[$index]);
+                    unset($unSortedStack[$index]);
                     continue;
                 }
             }
         }
 
         $this->stack = $sortedStack;
+    }
+
+    public function printJourneyDetails()
+    {
+        foreach ($this->stack as $card) {
+            echo $card->getJourneyDescription() . "\n";
+            echo "-------------------------------------\n";
+        }
+
+        echo "You have arrived at your final destination.\n";
+        echo "-==========================================\n";
     }
 }

@@ -46,4 +46,21 @@ class Flight extends AbstractTransporter implements Flyable
     {
         $this->baggageCounter = $baggageCounter;
     }
+
+    /**
+     * @return string
+     */
+    public function getJourneyDescription()
+    {
+        $baggageDescription = "Baggage will we automatically transferred from your last leg.";
+
+        if ($this->baggageCounter->baggageCounter !== "auto") {
+            $baggageDescription = "Baggage drop at ticket counter "
+              . $this->baggageCounter->baggageCounter . ".";
+        }
+        return "From " . $this->arrival->name . ", take flight "
+        . $this->number->number . " to " . $this->destination->name . ". Gate "
+        . $this->gate->gate . ", seat " . $this->seat->number . "."
+        . "\n" . $baggageDescription;
+    }
 }

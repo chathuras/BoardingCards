@@ -57,6 +57,14 @@ class Card
      */
     public function isDestinationEqualTo(Location $location)
     {
-        return $this->transporter->desination->name === $location->name;
+        return $this->transporter->destination->name === $location->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJourneyDescription()
+    {
+        return $this->transporter->getJourneyDescription();
     }
 }

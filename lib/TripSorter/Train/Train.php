@@ -29,4 +29,20 @@ class Train extends AbstractTransporter implements Locomotable
     {
         $this->number = $number;
     }
+
+    /**
+     * @return string
+     */
+    public function getJourneyDescription()
+    {
+        $seatDescription = "No seat assignment";
+
+        if ($this->seat->number !== null) {
+            $seatDescription = "Sit in seat " . $this->seat->number;
+        }
+
+        return "Take train " . $this->number->number . " from "
+            . $this->arrival->name . " to " . $this->destination->name . ". "
+            . $seatDescription . ".";
+    }
 }
