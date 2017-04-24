@@ -6,7 +6,7 @@
 * phpunit
 
 
-##How to run the project
+## How to run the project
 
 * Install composer
 * Install composer packages (for the installation of PHPUnit only)
